@@ -61,7 +61,7 @@ function getWeather(city){
     })
     .then(function (data){
         console.log(data);
-        //HTML Element Creation
+        
         
         $(".city1").html("<h1> Date </h1>");
         $(".temp1").text("Temp:" + data.list[1].main.temp + " Degrees F");
@@ -139,11 +139,15 @@ chicagoButton.on('click', function(){
 //  })
 
 var form = $("#form");
-var log = document.getElementById("log");
-form.on('submit', function(event){
+
+$("#form").on('submit', function(event){
     event.preventDefault();
     console.log('submit ok')
-    console.log(form.city.value())
+    var city = $("#search-input").val().trim();
+    if (city === ''){
+        return;
+    }
+    getWeather(city);
 });
 
 // submitformhandler
