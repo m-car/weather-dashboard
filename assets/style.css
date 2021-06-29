@@ -5,25 +5,47 @@
 body {
     padding:1.5rem;
 }
+main{
+    display:flex;
+}
 header {
     background-color: aqua;
+    text-align: center;
+}
+.search-column{
+    border-style: solid;
+    max-width: 30%;
 }
 .weather-display{
     border-style: solid;
+    display:inline;
+}
+.current-weather{
+    padding: 20px;
+    margin: 10px 10px;
+    border-style: outset;
 }
 .forecast-card{
     display:inline-block;
+    width: 200px;
+    height: 250px;
+    background-color: #2a1e62;
+    color: white;
+    font-size: larger;
+    
     border-style: solid;
+    
 }
 .forecast-section{
-    /* display:inline; */
+    display:inline;
 }
 
 .btn {
     text-align: center;
-    display: inline-block;
+    display: block;
+    width: 90%;
     padding: 0.5rem 1.2rem;
-    margin: 0;
+    margin: 10px auto ;
     text-decoration: none;
     font-size: 1rem;
     border-radius: 0.3rem;

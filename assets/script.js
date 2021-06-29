@@ -5,16 +5,9 @@ var apiURL = "pro.openweathermap.org/data/2.5/forecast/hourly?";
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
 
-var weatherDisplay = document.querySelector(".weather-display");
-var forecastCard = document.querySelector(".forecast-card");
 
-
-// var citySearch = $("#fetch-button")
-
-var city ="austin";
+var city;
 function getWeather(city){
-    
-
     var currentWeather = 
     "http://api.openweathermap.org/data/2.5/weather?q=" + city + 
     "&units=imperial&appid=" + APIKey;
@@ -25,7 +18,6 @@ function getWeather(city){
     //Main current weather display
     fetch(currentWeather)
     .then(function (response){
-        // console.log(response);
         return response.json();
     })
     .then(function (data){
@@ -36,6 +28,17 @@ function getWeather(city){
         // var stateWind = document.createElement('p');
         // var stateHumidity = document.createElement('p');
         // var stateUVindex = document.createElement('p');
+        var iconUrl =
+        "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+
+      // create an img element and set its src equal to the icon url.
+      var iconImg = $("<img>").attr({
+        src: iconUrl,
+        alt: data.weather[0].description,
+      });
+      // empty div #weather-icon and append the weather icon
+      $("#weather-icon").empty().append(iconImg);
+
         $(".city").html("<h1>" + data.name + " Weather Details</h1>")
         $(".temp").text("Temp:" + data.main.temp + " Degrees F");
         $(".wind").text("Wind:" + data.wind.speed + " MPH");
@@ -61,7 +64,9 @@ function getWeather(city){
     })
     .then(function (data){
         console.log(data);
-        
+        // var iconUrl ="http://openweathermap.org/img/wn/" + data.list[1].weather[0].icon + "@2x.png";
+        // var iconImg = $("<img>").attr({src: iconUrl,alt: data.list[1].weather[0].description,});
+        // $("#weather-icon1").append(iconImg);
         
         $(".city1").html("<h1> Date </h1>");
         $(".temp1").text("Temp:" + data.list[1].main.temp + " Degrees F");
@@ -111,34 +116,30 @@ function getWeather(city){
     
 }
 
-// getWeather(city);
-
-
-var austinButton = $("#austin");
-var chicagoButton = $("#chicago");
-var newYorkButton = $("#new-york");
-var orlandoButton = $("#orlando");
-
-
-
-austinButton.on('click', function(){
-    // weatherDisplay.remove('p');
+$("#austin").on('click', function(){
     getWeather("austin")
 })
-chicagoButton.on('click', function(){
+$("#chicago").on('click', function(){
     getWeather("chicago")
  })
- newYorkButton.on('click', function(){
+ $("#new-york").on('click', function(){
     getWeather("new+york")
  })
- orlandoButton.on('click', function(){
+ $("#orlando").on('click', function(){
     getWeather("orlando")
  })
-//  chicagoButton.on('click', function(){
-//     getWeather("chicago")
-//  })
-
-var form = $("#form");
+ $("#san-francisco").on('click', function(){
+    getWeather("san+francisco")
+ })
+ $("#seattle").on('click', function(){
+    getWeather("seattle")
+ })
+ $("#denver").on('click', function(){
+    getWeather("denver")
+ })
+ $("#atlanta").on('click', function(){
+    getWeather("atlanta")
+ })
 
 $("#form").on('submit', function(event){
     event.preventDefault();
@@ -149,10 +150,6 @@ $("#form").on('submit', function(event){
     }
     getWeather(city);
 });
-
-// submitformhandler
-//take search term, store in local storage, display on form 
-
 
 
 
