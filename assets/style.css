@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    
+}
+body {
+    padding:1.5rem;
+}
+header {
+    background-color: aqua;
+}
