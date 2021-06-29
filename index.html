@@ -10,18 +10,17 @@
  <body>
      <header>
          <h1>weather dashboard</h1>
-         <nav>
-             <ul>
-                 <li>navbar here</li>
-             </ul>
-         </nav>
      </header>
      <section class="search-column">
          <div class="">
-             <div></div>
-             <h2>search column</h2>
-             <p>search form window</p>
-             <button class="btn">Search</button>
+             
+             <h2>Search for a City:</h2>
+             <form id="form">
+                 <label>Search <input type=""></label>
+                 <br>
+                <button type="submit" class="btn" id="fetch-button">Search</button>
+             </form>
+             <p id="log"></p>
             </div>
             <div>
                 <h3>Cities</h3>
@@ -40,7 +39,7 @@
      <section class="forecast-section">
          <div>
              <h1>5-Day Forecast:</h1>
-             <div class="forecast-card">card</div>
+             <div class="forecast-card"></div>
          </div>
      </section>
      <script src="assets/script.js"></script>
