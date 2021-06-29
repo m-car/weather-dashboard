@@ -2,17 +2,17 @@
 var APIKey = '25659c002aa5786e2cc48bc9ba98e645';
 var apiURL = "pro.openweathermap.org/data/2.5/forecast/hourly?";
 //api.openweathermap.org/data/2.5/weather?q=austin&appid=25659c002aa5786e2cc48bc9ba98e645
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
 
 
 var city;
 function getWeather(city){
     var currentWeather = 
-    "http://api.openweathermap.org/data/2.5/weather?q=" + city + 
+    "https://api.openweathermap.org/data/2.5/weather?q=" + city + 
     "&units=imperial&appid=" + APIKey;
     var forecastFive = 
-    "http://api.openweathermap.org/data/2.5/forecast?q=" + city + 
+    "https://api.openweathermap.org/data/2.5/forecast?q=" + city + 
     "&units=imperial&appid=" + APIKey;
     
     //Main current weather display
@@ -29,7 +29,7 @@ function getWeather(city){
         // var stateHumidity = document.createElement('p');
         // var stateUVindex = document.createElement('p');
         var iconUrl =
-        "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+        "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
 
       // create an img element and set its src equal to the icon url.
       var iconImg = $("<img>").attr({
