@@ -12,8 +12,13 @@ header {
     border-style: solid;
 }
 .forecast-card{
+    display:inline-block;
     border-style: solid;
 }
+.forecast-section{
+    /* display:inline; */
+}
+
 .btn {
     text-align: center;
     display: inline-block;
